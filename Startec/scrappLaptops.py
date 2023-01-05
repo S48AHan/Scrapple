@@ -13,6 +13,7 @@ try:
     soup = BeautifulSoup(source.text,'html.parser')
     laptops = soup.find('div', class_= 'main-content p-items-wrap').findAll('div',class_='p-item')
     print(len(laptops))
+    '''
     for laptop in laptops:
         name = laptop.find('td',class_='titleColumn').a.text
         rank = movie.find('td',class_='titleColumn').get_text(strip = True).split('.')[0]
@@ -20,7 +21,7 @@ try:
         rating = movie.find('td',class_='ratingColumn imdbRating').strong.text
         print(rank, name, year, rating)
         sheet.append([rank, name, year, rating])
-
+'''
 
 except Exception as e:
     print(e)
